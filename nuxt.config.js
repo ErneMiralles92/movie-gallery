@@ -27,7 +27,7 @@ export default {
   css: ['@mdi/font/css/materialdesignicons.min.css', '~/assets/main'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/theme'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: ['~/components/UI'],
@@ -36,6 +36,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    '@nuxtjs/style-resources',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -47,6 +48,12 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
+  // Make Global the Sass Variables global
+  styleResources: {
+    scss: ['~/assets/variables.scss'],
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  extend(config, { loaders }) {
+    loaders.scss.additionalData = '@use "sass:math";'
+  },
 }

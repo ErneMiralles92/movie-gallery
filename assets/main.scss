@@ -1,0 +1,362 @@
+@use 'sass:math';
+@import './variables.scss';
+
+@for $i from 1 through 12 {
+
+  // Spacing
+  .ma-#{$i} {
+    margin: 4px * $i !important;
+  }
+  .ma-n#{$i} {
+    margin: -4px * $i !important;
+  }
+  .mt-#{$i} {
+    margin-top: 4px * $i !important;
+  }
+  .mt-n#{$i} {
+    margin-top: -4px * $i !important;
+  }
+  .mr-#{$i} {
+    margin-right: 4px * $i !important;
+  }
+  .mr-n#{$i} {
+    margin-right: -4px * $i !important;
+  }
+  .mb-#{$i} {
+    margin-bottom: 4px * $i !important;
+  }
+  .mb-n#{$i} {
+    margin-bottom: -4px * $i !important;
+  }
+  .ml-#{$i} {
+    margin-left: 4px * $i !important;
+  }
+  .ml-n#{$i} {
+    margin-left: -4px * $i !important;
+  }
+  .pa-#{$i} {
+    padding: 4px * $i !important;
+  }
+  .pa-n#{$i} {
+    padding: -4px * $i !important;
+  }
+  .pt-#{$i} {
+    padding-top: 4px * $i !important;
+  }
+  .pt-n#{$i} {
+    padding-top: -4px * $i !important;
+  }
+  .pr-#{$i} {
+    padding-right: 4px * $i !important;
+  }
+  .pr-n#{$i} {
+    padding-right: -4px * $i !important;
+  }
+  .pb-#{$i} {
+    padding-bottom: 4px * $i !important;
+  }
+  .pb-n#{$i} {
+    padding-bottom: -4px * $i !important;
+  }
+  .pl-#{$i} {
+    padding-left: 4px * $i !important;
+  }
+  .pl-n#{$i} {
+    padding-left: -4px * $i !important;
+  }
+
+  // Col System
+  .col-#{$i} {
+    flex: 0 0 math.div($i,12) * 100% !important;
+    max-width: math.div($i,12) * 100% !important;
+  }
+
+  @media screen and (min-width: 1024px)  {
+    .col-md#{$i} {
+      flex: 0 0 math.div($i,12) * 100% !important;
+      max-width: math.div($i,12) * 100% !important;
+    }
+  }
+
+  @media screen and (min-width: 800px)  {
+    .col-sm#{$i} {
+      flex: 0 0 math.div($i,12) * 100% !important;
+      max-width: math.div($i,12) * 100% !important;
+    }
+  }
+
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  color: $lightTextColor;
+  .app-dark {
+    color: $darkTextColor;
+  }
+}
+
+aside {
+  background-color: $lightBackgroundColor;
+}
+.playground {
+  background-color: #b3e5fc
+}
+.app-dark {
+  aside{
+    background-color: $darkBackgroundColor;
+  }
+  .playground {
+    background-color: #01579b
+  }
+}
+/* Grid */
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;  
+  flex: 1 0 auto;
+  max-width: 100%;
+  transition: .2s cubic-bezier(.4,0,.2,1);
+  padding: 16px;
+}
+
+.app-main {
+  position: relative;
+  overflow: hidden;
+  flex: 1 0 auto;
+  max-width: 100%;
+  display: flex;
+}
+
+.app-column {
+  display: flex !important;
+  flex-direction: column !important;
+  max-width: 100% !important;
+}
+
+.app-row {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+
+.app-justify-start {
+  justify-content: flex-start !important;
+}
+
+.app-justify-end {
+  justify-content: flex-end !important;
+}
+
+.app-justify-center {
+  justify-content: center !important;
+}
+
+.app-justify-space-between {
+  justify-content: space-between !important;
+}
+
+.app-justify-stretch {
+  justify-items: stretch;
+}
+
+.app-align-start {
+  align-items: flex-start !important;
+}
+
+.app-align-end {
+  align-items: flex-end !important;
+}
+
+.app-align-center {
+  align-items: center !important;
+}
+.app-align-stretch {
+  align-items: stretch !important;
+}
+
+.fill-height {
+  height: 100%;
+}
+.app-spacer {
+  flex-grow: 1!important;
+}
+
+.app-text-left {
+  text-align: left !important;
+}
+.app-text-right {
+  text-align: right !important;
+}
+.app-text-center {
+  text-align: center !important;
+}
+
+
+/* Colors */ 
+.grey-text {
+  color: #9E9E9E;
+}
+
+/* Font  & Typography*/
+
+.text-display-2 {
+  font-size: 3rem!important;
+  line-height: 3.125rem;
+  letter-spacing: normal!important;
+}
+
+.text-display-1 {
+  font-size: 2rem !important;
+  line-height: 2.5rem;
+  letter-spacing: .0073529412em !important;
+}
+
+.text-display-1, .text-display-2 {
+  font-weight: 400;
+  font-family: Roboto,sans-serif !important;
+}
+
+.text-headline {
+  font-size: 1.5rem !important;
+  font-weight: 400;
+  letter-spacing: normal !important;
+  line-height: 2rem;
+
+}
+
+.text-title {
+  font-size: 1.25em !important;
+  font-weight: 500 !important;
+  letter-spacing: .0125em!important;
+  line-height: 2rem;
+}
+
+.text-subtitle {
+  font-size: 1rem !important;
+  letter-spacing: .009375em !important;
+  line-height: 1.75rem;
+}
+
+.text-caption {
+  font-size: .8rem!important;
+  letter-spacing: .0333333333em!important;
+  line-height: 1.25rem;
+}
+
+.text-mini-caption {
+  font-size: .6rem!important;
+  letter-spacing: .0333333333em!important;
+  line-height: 1.25rem;
+}
+
+.font-weight-thin {
+  font-weight: 300 !important;
+} 
+
+.font-weight-regular {
+  font-weight: 400 !important;
+}
+
+.font-weight-medium {
+  font-weight: 500 !important;
+}
+
+.font-weight-bold {
+  font-weight: 600 !important;
+}
+
+/* Nuxt */
+.nuxt-link-exact-active {
+  color: #1976D2;
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 1024px) {
+  .app-md-align-end {
+    align-items: flex-end !important;
+  }
+  .app-md-text-left {
+    text-align: left !important;
+  }
+  .app-md-text-right {
+    text-align: right !important;
+  }
+  .app-md-text-center {
+    text-align: center !important;
+  }
+}
+@media screen and (min-width: 800px) {
+  .app-container {
+    padding: $headerHeight 24px 4px 24px;
+  }
+  
+  .app-container.app-with-sidebar-active {
+    padding-left: calc(#{$sideBarWidth} + 24px);
+  }
+  .hide-for-desktop {
+    display: none !important;
+  }
+ 
+  .app-sm-align-end {
+    align-items: flex-end!important;
+  }
+
+  .app-sm-text-left {
+    text-align: left !important;
+  }
+  .app-sm-text-right {
+    text-align: right !important;
+  }
+  .app-sm-text-center {
+    text-align: center !important;
+  }
+
+  .app-sm-justify-start {
+    justify-content: flex-start !important;
+  }
+  
+  .app-sm-justify-end {
+    justify-content: flex-end !important;
+  }
+  
+  .app-sm-justify-center {
+    justify-content: center !important;
+  }
+  
+  .app-sm-justify-space-between {
+    justify-content: space-between !important;
+  }
+  
+  .app-sm-justify-stretch {
+    justify-items: stretch;
+  }
+  
+  .app-sm-align-start {
+    align-items: flex-start !important;
+  }
+  
+  .app-sm-align-end {
+    align-items: flex-end !important;
+  }
+  
+  .app-sm-align-center {
+    align-items: center !important;
+  }
+  .app-sm-align-stretch {
+    align-items: stretch !important;
+  }
+}
