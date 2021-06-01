@@ -1,5 +1,5 @@
 export const state = () => ({
-  darkTheme: false,
+  darkTheme: true,
   drawer: true,
 })
 

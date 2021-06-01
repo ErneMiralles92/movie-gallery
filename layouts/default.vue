@@ -9,7 +9,7 @@
         'app-with-sidebar-active': drawer,
       }"
     >
-      <main class="app-content">
+      <main class="mt-12">
         <Nuxt />
       </main>
     </div>

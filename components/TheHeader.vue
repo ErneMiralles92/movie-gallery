@@ -1,6 +1,6 @@
 <template>
   <div class="app-header app-row app-align-center">
-    <AppButton large class="ma-1" icon text rounded @click="drawer = !drawer">
+    <AppButton large class="mr-2" icon text rounded @click="drawer = !drawer">
       <AppIcon>mdi-menu</AppIcon>
     </AppButton>
     <div class="title-block app-column app-align-start">

@@ -66,23 +66,23 @@
   }
 
   // Col System
-  .col-#{$i} {
-    flex: 0 0 math.div($i,12) * 100% !important;
-    max-width: math.div($i,12) * 100% !important;
-  }
 
-  @media screen and (min-width: 1024px)  {
-    .col-md#{$i} {
-      flex: 0 0 math.div($i,12) * 100% !important;
-      max-width: math.div($i,12) * 100% !important;
+  @media screen and (max-width: 375px)  {
+    .col-#{$i} {
+      flex: 0 0 math.div($i,12) * 100% ;
+      max-width: math.div($i,12) * 100% ;
     }
   }
 
-  @media screen and (min-width: 800px)  {
-    .col-sm#{$i} {
-      flex: 0 0 math.div($i,12) * 100% !important;
-      max-width: math.div($i,12) * 100% !important;
+  @media screen and (max-width: 800px)  {
+    .col-sm-#{$i} {
+      flex: 0 0 math.div($i,12) * 100%;
+      max-width: math.div($i,12) * 100%;
     }
+  }
+  .col-md-#{$i} {
+    flex: 0 0 math.div($i,12) * 100%;
+    max-width: math.div($i,12) * 100%;
   }
 
 
@@ -129,15 +129,7 @@ aside {
   flex: 1 0 auto;
   max-width: 100%;
   transition: .2s cubic-bezier(.4,0,.2,1);
-  padding: 16px;
-}
-
-.app-main {
-  position: relative;
-  overflow: hidden;
-  flex: 1 0 auto;
-  max-width: 100%;
-  display: flex;
+  padding: $headerHeight 16px 4px 16px;
 }
 
 .app-column {

@@ -1,7 +1,8 @@
 <template>
   <aside :class="navSideClass" class="app-nav-sidebar">
     <nav class="app-nav-content">
-      <div class="app-row app-justify-center mt-9"></div>
+      <h6 class="text-subtitle mt-3">Historial</h6>
+      <div class="app-row app-justify-center"></div>
     </nav>
     <div class="app-nav__border"></div>
   </aside>

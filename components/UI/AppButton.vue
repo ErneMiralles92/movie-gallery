@@ -54,11 +54,11 @@ export default {
     },
     color: {
       type: String,
-      default: '#9FA8DA',
+      default: '',
     },
     textColor: {
       type: String,
-      default: 'black',
+      default: '',
     },
     disabled: {
       type: Boolean,
@@ -110,10 +110,14 @@ export default {
     },
     customStyle() {
       let styles = {
-        color: this.textColor,
-        backgroundColor: this.color,
-        borderColor: this.color,
         'border-radius': convertToUnit(this.borderRadius),
+      }
+      if (this.color) {
+        styles['background-color'] = this.color
+        styles.borderColor = this.color
+      }
+      if (this.textColor) {
+        styles.color = this.textColor
       }
       const size = this.resultingHeight
       if (size) {
@@ -135,7 +139,18 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.app-dark {
+  .app-btn {
+    background-color: $darkElementsColor;
+  }
+
+  .app-btn__content {
+    span {
+      color: $darkTextColor;
+    }
+  }
+}
 .app-btn {
   cursor: pointer;
   align-items: center;
@@ -158,6 +173,7 @@ export default {
   vertical-align: middle;
   white-space: nowrap;
   padding: 0 16px;
+  background-color: $lightElementsColor;
 }
 
 .app-btn__content {
@@ -166,6 +182,10 @@ export default {
   flex: 1 0 auto;
   line-height: normal;
   position: relative;
+
+  span {
+    color: $lightTextColor;
+  }
 }
 
 .app-btn-icon .app-btn__content {
