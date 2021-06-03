@@ -137,7 +137,7 @@
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 400;
   color: $lightTextColor;
   .app-dark {
@@ -170,6 +170,19 @@ span {
     color: #BDBDBD;
   }
 }
+
+.image,
+.image-full {
+  max-width: 100%;
+  height: auto;
+  min-height: 200px;
+}
+.image {
+  border-radius: 8px 8px 0 0;
+}
+.image-full {
+  border-radius: 0px;
+}
 /* Grid */
 
 .app-container {
@@ -182,7 +195,7 @@ span {
   max-width: calc(1200px + #{$sideBarWidth});
   margin: 0 auto;
   transition: .2s cubic-bezier(.4,0,.2,1);
-  padding: $headerHeight 16px 4px 16px;
+  padding: $headerHeight 16px 16px 16px;
 }
 
 
@@ -352,7 +365,7 @@ span {
 }
 @media screen and (min-width: 800px) {
   .app-container {
-    padding: $headerHeight 24px 4px 24px;
+    padding: $headerHeight 24px 24px 24px;
   }
   
   .app-container.app-with-sidebar-active {
