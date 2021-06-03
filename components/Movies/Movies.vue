@@ -40,7 +40,11 @@
           <img
             class="image"
             style="height: 300px"
-            :src="movie.Poster"
+            :src="
+              movie.Poster !== 'N/A'
+                ? movie.Poster
+                : 'https://cdn4.iconfinder.com/data/icons/small-n-flat/24/movie-alt2-512.png'
+            "
             :alt="`${movie.Title} Image`"
             onerror="this.src='https://cdn4.iconfinder.com/data/icons/small-n-flat/24/movie-alt2-512.png'"
           />
@@ -60,7 +64,11 @@
           </div>
           <img
             class="image-full"
-            :src="selectedMovie.Poster"
+            :src="
+              selectedMovie.Poster !== 'N/A'
+                ? selectedMovie.Poster
+                : 'https://cdn4.iconfinder.com/data/icons/small-n-flat/24/movie-alt2-512.png'
+            "
             :alt="`${selectedMovie.Title} Image`"
             onerror="this.src='https://cdn4.iconfinder.com/data/icons/small-n-flat/24/movie-alt2-512.png'"
           />
@@ -134,18 +142,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.image,
-.image-full {
-  max-width: 100%;
-  height: auto;
-  min-height: 200px;
-}
-.image {
-  border-radius: 8px 8px 0 0;
-}
-.image-full {
-  border-radius: 0px;
-}
 .fab {
   position: absolute;
   z-index: 4;
