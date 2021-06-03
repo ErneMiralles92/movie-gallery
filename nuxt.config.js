@@ -28,9 +28,12 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['~/plugins/theme'],
+  env: {
+    OMDB_API_KEY: '4812f0e1',
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: ['~/components/UI'],
+  components: ['~/components/UI', '~/components/Movies'],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -46,7 +49,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'http://www.omdbapi.com/',
+  },
 
   // Make Global the Sass Variables global
   styleResources: {

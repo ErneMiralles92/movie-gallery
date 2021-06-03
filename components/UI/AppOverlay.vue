@@ -1,7 +1,9 @@
 <template>
   <div v-show="value" class="app-overlay">
     <div class="app-overlay-screen" @click="clickedOutside"></div>
-    <div class="app-overlay-content"></div>
+    <div class="app-overlay-content">
+      <slot name="default" />
+    </div>
   </div>
 </template>
 
