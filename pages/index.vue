@@ -78,9 +78,9 @@ const fetchMovies = (axiosInstance, page, search) => {
 }
 
 export default {
-  asyncData(context) {
-    return fetchMovies(context.app.$axios, 1, 'Ann')
-  },
+  // asyncData(context) {
+  //   return fetchMovies(context.app.$axios, 1, 'Ann')
+  // },
   data() {
     return {
       search: '',

@@ -1,6 +1,6 @@
 export const state = () => ({
   darkTheme: false,
-  drawer: true,
+  drawer: false,
   cartCount: 0,
   history: [],
 })

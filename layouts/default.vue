@@ -35,6 +35,12 @@ export default {
       },
     },
   },
+  mounted() {
+    console.log({ window })
+    if (window.innerWidth > 375) {
+      this.drawer = true
+    }
+  },
 }
 </script>
 <style></style>

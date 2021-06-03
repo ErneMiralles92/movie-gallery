@@ -3,7 +3,14 @@
     <AppButton large class="mr-2" icon text rounded @click="drawer = !drawer">
       <AppIcon>mdi-menu</AppIcon>
     </AppButton>
-    <AppButton large class="mr-2" icon text rounded @click="$router.push('/')">
+    <AppButton
+      large
+      class="mr-2 hide-for-mobile"
+      icon
+      text
+      rounded
+      @click="$router.push('/')"
+    >
       <div class="avatar">
         <img alt="logo" src="/favicon.ico" />
       </div>

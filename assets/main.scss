@@ -363,6 +363,11 @@ span {
     text-align: center !important;
   }
 }
+@media screen and (max-width: 375px) {
+  .hide-for-mobile {
+    display: none !important;
+  }
+}
 @media screen and (min-width: 800px) {
   .app-container {
     padding: $headerHeight 24px 24px 24px;
@@ -370,9 +375,6 @@ span {
   
   .app-container.app-with-sidebar-active {
     padding-left: calc(#{$sideBarWidth} + 24px);
-  }
-  .hide-for-desktop {
-    display: none !important;
   }
  
   .app-sm-align-end {
