@@ -47,7 +47,7 @@ class DebounceService {
 const fetchMovies = (axiosInstance, page, search) => {
   return axiosInstance
     .$get(
-      `http://www.omdbapi.com/?apiKey=${process.env.OMDB_API_KEY}&type=movie&page=${page}&s=${search}`
+      `https://www.omdbapi.com/?apiKey=${process.env.OMDB_API_KEY}&type=movie&page=${page}&s=${search}`
     )
     .then((data) => {
       console.log({ data })

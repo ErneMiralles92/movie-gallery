@@ -14,7 +14,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Este es un demo que lista y permite buscar películas obtenidas de la api http://www.omdbapi.com/',
+          'Este es un demo que lista y permite buscar películas obtenidas de la api https://www.omdbapi.com/',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -46,9 +46,7 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    baseURL: 'http://www.omdbapi.com/',
-  },
+  axios: {},
 
   // Make Global the Sass Variables global
   styleResources: {

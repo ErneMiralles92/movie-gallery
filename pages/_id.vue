@@ -17,7 +17,7 @@
 const fetchMovieByID = (axiosInstance, imdbID) => {
   return axiosInstance
     .$get(
-      `http://www.omdbapi.com/?apiKey=${process.env.OMDB_API_KEY}&i=${imdbID}`
+      `https://www.omdbapi.com/?apiKey=${process.env.OMDB_API_KEY}&i=${imdbID}`
     )
     .then((data) => {
       console.log({ data })
