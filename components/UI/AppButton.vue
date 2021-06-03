@@ -188,6 +188,14 @@ export default {
   }
 }
 
+.app-btn-disabled {
+  .app-btn__content {
+    span {
+      color: #bdbdbd;
+    }
+  }
+}
+
 .app-btn-icon .app-btn__content {
   justify-content: center;
 }
@@ -242,7 +250,7 @@ export default {
 }
 
 .app-btn.app-btn-disabled:not(.app-btn-flat):not(.app-btn-text) {
-  background-color: rgba(0, 0, 0, 0.12) !important;
+  background-color: #fafafa !important;
 }
 
 .app-btn-disabled {
