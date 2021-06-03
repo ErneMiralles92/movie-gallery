@@ -1,8 +1,16 @@
 <template>
   <aside :class="navSideClass" class="app-nav-sidebar">
     <nav class="app-nav-content">
-      <h6 class="text-subtitle mt-3">Historial</h6>
-      <div class="app-row app-justify-center"></div>
+      <h6 class="text-subtitle m-3">Historial</h6>
+      <NuxtLink
+        v-for="item in navHistory"
+        :key="item.id"
+        class="text-caption my-1"
+        :to="`/${item.id}`"
+        exact
+      >
+        {{ item.title }}
+      </NuxtLink>
     </nav>
     <div class="app-nav__border"></div>
   </aside>
@@ -17,6 +25,9 @@ export default {
     },
   },
   computed: {
+    navHistory() {
+      return this.$store.getters.history
+    },
     drawer: {
       get() {
         return this.$store.getters.drawer
@@ -39,6 +50,17 @@ export default {
       },
     },
   },
+  mounted() {
+    const navHistory = JSON.parse(localStorage.getItem('navHistory'))
+    if (navHistory && navHistory.length > 0) {
+      this.$store.commit('setHistory', navHistory)
+    }
+  },
+  methods: {
+    toTop() {
+      console.log('toTop')
+    },
+  },
 }
 </script>
 
@@ -56,7 +78,7 @@ aside {
   flex-direction: column;
   left: 0;
   max-width: 100%;
-  width: 200px;
+  width: $sideBarWidth;
   padding: 4px 16px;
   overflow: hidden;
   pointer-events: auto;
