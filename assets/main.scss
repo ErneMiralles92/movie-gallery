@@ -1,11 +1,36 @@
 @use 'sass:math';
 @import './variables.scss';
 
-@for $i from 1 through 12 {
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+@for $i from 0 through 12 {
 
   // Spacing
   .ma-#{$i} {
     margin: 4px * $i !important;
+  }
+  .mx-#{$i} {
+    margin-right: 4px * $i !important;
+    margin-left: 4px * $i !important;
+  }
+  .my-#{$i} {
+    margin-top: 4px * $i !important;
+    margin-bottom: 4px * $i !important;
+  }
+  .mx-n#{$i} {
+    margin-right: -4px * $i !important;
+    margin-left: -4px * $i !important;
+  }
+  .my-n#{$i} {
+    margin-top: -4px * $i !important;
+    margin-bottom: -4px * $i !important;
   }
   .ma-n#{$i} {
     margin: -4px * $i !important;
@@ -39,6 +64,22 @@
   }
   .pa-n#{$i} {
     padding: -4px * $i !important;
+  }
+  .px-#{$i} {
+    padding-right: 4px * $i !important;
+    padding-left: 4px * $i !important;
+  }
+  .py-#{$i} {
+    padding-top: 4px * $i !important;
+    padding-bottom: 4px * $i !important;
+  }
+  .px-n#{$i} {
+    padding-right: -4px * $i !important;
+    padding-left: -4px * $i !important;
+  }
+  .py-n#{$i} {
+    padding-top: -4px * $i !important;
+    padding-bottom: -4px * $i !important;
   }
   .pt-#{$i} {
     padding-top: 4px * $i !important;
@@ -107,6 +148,11 @@ body {
 aside {
   background-color: $lightBackgroundColor;
 }
+
+span {
+  text-align: left;
+}
+
 .playground {
   background-color: #b3e5fc
 }
@@ -116,6 +162,12 @@ aside {
   }
   .playground {
     background-color: #01579b
+  }
+  a {
+    color: $darkTextColor;
+  }
+  .nuxt-link-active {
+    color: #BDBDBD;
   }
 }
 /* Grid */
@@ -127,10 +179,12 @@ aside {
   align-content: center;
   text-align: center;  
   flex: 1 0 auto;
-  max-width: 100%;
+  max-width: calc(1200px + #{$sideBarWidth});
+  margin: 0 auto;
   transition: .2s cubic-bezier(.4,0,.2,1);
   padding: $headerHeight 16px 4px 16px;
 }
+
 
 .app-column {
   display: flex !important;
@@ -276,6 +330,11 @@ aside {
 
 
 /* Media Queries */
+@media screen and (max-width: 1024px) { 
+  .app-container {
+    max-width: 100%;
+  }
+}
 
 @media screen and (min-width: 1024px) {
   .app-md-align-end {
