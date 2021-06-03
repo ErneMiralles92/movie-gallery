@@ -39,6 +39,7 @@
           </AppButton>
           <img
             class="image"
+            style="height: 300px"
             :src="movie.Poster"
             :alt="`${movie.Title} Image`"
             onerror="this.src='https://cdn4.iconfinder.com/data/icons/small-n-flat/24/movie-alt2-512.png'"
@@ -136,7 +137,7 @@ export default {
 .image,
 .image-full {
   max-width: 100%;
-  height: 300px;
+  height: auto;
   min-height: 200px;
 }
 .image {
