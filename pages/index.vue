@@ -16,9 +16,10 @@
       :movies="moviesData.movies"
       class="mt-8"
     />
-    <span v-show="!!moviesData.err" class="text-subtitle mt-8">{{
-      moviesData.err
-    }}</span>
+    <AppCard v-show="!!moviesData.err">
+      <span class="text-subtitle mt-8">{{ moviesData.err }}</span>
+    </AppCard>
+
     <AppPaginationControl
       v-if="moviesData.totalResults > 10"
       v-model="currentPage"
@@ -63,7 +64,7 @@ const fetchMovies = (axiosInstance, page, search) => {
       return {
         moviesData: {
           movies: data.Search,
-          err: data.Response !== 'True',
+          err: data.Response !== 'True' ? data.Error : null,
           totalResults: +data.totalResults,
         },
       }

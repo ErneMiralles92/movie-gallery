@@ -174,6 +174,7 @@ export default {
   white-space: nowrap;
   padding: 0 16px;
   background-color: $lightElementsColor;
+  font-family: inherit;
 }
 
 .app-btn__content {
@@ -185,6 +186,9 @@ export default {
 
   span {
     color: $lightTextColor;
+  }
+  i {
+    font-family: Arial;
   }
 }
 
